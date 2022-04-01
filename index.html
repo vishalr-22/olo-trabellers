@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olo Travelers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+        crossorigin="anonymous"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Lora&family=Style+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+        body {
+            background-color: whitesmoke;
+        }
+        #myBtn {
+            display: none;
+            position: fixed;
+            /* bottom: 20px;
+            right: 30px;
+            z-index: 99; */
+            bottom: 2%;
+            right: 2%;
+            z-index: 99;
+
+            font-size: 180%;
+            color: white;
+            cursor: pointer;
+            padding-left: 1%;
+            padding-right: 1%;
+            border-radius: 4px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            padding-top: 0%;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+        .header {
+            list-style-type: none;
+            float: right;
+            /* font-family: 'Bellefair', serif; */
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 130%;
+            margin-bottom: 0.9%;
+        }
+
+        .header li {
+            margin-top: 2%;
+            padding: 1%;
+            float: left;
+            /* background-color: blue; */
+            width: 90px;
+            border-bottom: 3px solid #30475E;
+            text-align: center;
+            transition: all 0.3s ease;
+            /* padding-top: 0%; */
+        }
+
+        .items:hover {
+            border-bottom: 3px solid #C3AED6;
+            color: #C3AED6;
+            cursor: pointer;
+
+        }
+
+        .header-title {
+            float: left;
+            /* background-color: aqua; */
+            padding-top: 2.5%;
+            padding-left: 1%;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        #acc col-3 {
+            background-color: burlywood;
+        }
+
+        #acc col-9 {
+            background-image: url("images/travel.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #intro {
+            /* background-image: url("images/travel.jpg"); */
+            background: linear-gradient(rgba(68, 67, 67, 0.5), rgba(63, 63, 63, 0.5)), url("images/travel.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        #intro h1 {
+            font-family: 'Style Script', cursive;
+            font-size: 1000%;
+            text-align: center;
+            color: white;
+        }
+
+        #acc {
+            /* background-color: #383E56; */
+            background-color: #562349;
+            background-image: url("images/hotel.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: right;
+            padding: 4%;
+            color: white;
+
+        }
+
+        #rent {
+            background-color: #5E454B;
+            background-image: url("images/keys2.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: right;
+            padding: 4%;
+            color: white;
+        }
+
+        #acc h1,
+        #rent h1 {
+            font-size: 550%;
+            font-family: 'Lora', serif;
+        }
+
+        #acc p,
+        #rent p {
+            font-size: 230%;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        #acc button,
+        #rent p {
+            size: 150%;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            box-shadow: 5px 10px 18px #888888;
+            transform: scale(1.05);
+            transition: 500ms;
+        }
+
+        #footer {
+            background-color: #30475E;
+            color: white;
+            padding: 2%;
+            /* font-family: 'Bellefair', serif; */
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 130%;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            box-shadow: 5px 10px 18px #888888;
+            transform: scale(1.05);
+            transition: 500ms;
+        }
+
+        #holiday {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 130%;
+            text-align: center;
+            /* margin: 2%; */
+        }
+
+        #holiday h1,
+        #book h1 {
+            font-family: 'Lora', serif;
+            text-align: center;
+        }
+
+        #holiday p {
+            text-align: center;
+        }
+
+        #holiday img,
+        #book img {
+            width: 22.5rem;
+            /* max-width: 24rem; */
+            height: auto;
+            max-height: 27rem;
+            opacity: 0.95;
+            filter: grayscale(20%);
+
+        }
+
+        .card-title {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 300%;
+            font-weight: 1000;
+            color: rgb(255, 255, 255);
+        }
+
+        #testimonials .col-6 {
+            padding: 5%;
+            background-color: #52524E;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 160%;
+            color: white;
+            height: 400px;
+            padding-top: 7%;
+        }
+
+        .contactus {
+            background-image: url("images/contact.jpg");
+            background: linear-gradient(rgba(68, 67, 67, 0.5), rgba(63, 63, 63, 0.5)), url("images/contact.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        #contact_form {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 150%;
+            padding: 3%;
+            background-color: #39375B;
+            color: white;
+            block-size: 50%;
+        }
+        .anchor{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn btn-dark" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    <div class="container-fluid" style="background-color: #30475E; color: white;">
+        <h3 class="header-title">OLO</h3>
+        <ul class="header">
+            <li class="items">Home</li>
+            <li class="items"style="width:190px"><a class="anchor" href="wsd travel.html">Holiday Packages</a></li>
+            <li class="items" style="width:190px"><a class="anchor" href="hotelbooking-1.html">Hotel Reservations</a></li>
+            <li class="items"><a class="anchor" href="train.html">Train</a></li>
+            <li class="items"><a class="anchor" href="cab.html">Cab</a></li>
+            <li class="items"><a class="anchor" href="bus.html">Bus</a></li>
+            <li class="items"><a class="anchor" href="flight.html">Flight</a></li>
+            <li class="items"><a class="anchor" href="about.html">About</a></li>
+            <li class="items"><a class="anchor" href="contact.html">Contact</a></li>
+            <li style="width: 170px; padding-top: 0%; padding-bottom: 0%;"><button class="btn btn-lg btn-danger">Get Started</button></li>
+        </ul>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="container-fluid" id="intro">
+        <br><br><br><br>
+        <h1>Discover The </h1>
+        <h1>World</h1>
+        <br><br><br><br>
+    </div><br>
+    <div class="container-fluid" id="acc"><br>
+        <h1>World Class<br>Accomodation</h1><br><br>
+        <p>Discover a hotel that defines<br>a new dimension of luxury</p><br>
+        <button class="btn btn-lg btn-danger">View More</button><br><br>
+    </div>
+    <br><br>
+    <div class="container" id="holiday">
+        <h1>Our exclusive holiday packages <button class="btn btn-lg btn-danger">View more</button></h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque distinctio deserunt debitis sunt aliquid
+            sequi?</p>
+        <div class="row">
+            <div class="col-md-4" style="align-items: center;">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/maldives.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Maldives</h5>
+                        <p class="card-text">From 50000</p>
+                        <a href="#" class="btn btn-primary">See More</a>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-md-4">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/paris.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <p class="card-text">From 60000</p>
+                        <a href="#" class="btn btn-primary">See More</a>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-md-4">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/greece.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Greece</h5>
+                        <p class="card-text">From 70000</p>
+                        <a href="#" class="btn btn-primary">See More</a>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+    </div><br><br>
+    <div class="container-fluid" id="rent"><br>
+        <h1>Rental Services<br>A Click Away</h1><br><br>
+        <p>You're better off driving our way<br>You rent a lot more than a car</p><br>
+        <button class="btn btn-lg btn-danger">View More</button><br><br>
+    </div>
+    <br><br>
+
+    <div class="container" id="book">
+        <h1 style="font-size: 300%;">Book your Ride</h1><br>
+        <div class="row">
+            <div class="col-md-4" style="align-items: center;">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/plane.jpg" alt="...">
+                    <!-- <div class="card-body"> -->
+                    <h5 class="card-title">Plane</h5>
+                    <!-- <p class="card-text">From 50000</p>
+                        <a href="#" class="btn btn-primary">See More</a> -->
+                    <!-- </div> -->
+                </div>
+            </div><br>
+            <div class="col-md-4">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/train.jpg" alt="...">
+                    <!-- <div class="card-body"> -->
+                    <h5 class="card-title">Train</h5>
+                    <!-- <p class="card-text">From 60000</p>
+                        <a href="#" class="btn btn-primary">See More</a> -->
+                    <!-- </div> -->
+                </div>
+            </div><br>
+            <div class="col-md-4">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/bus.jpg" class="card-img-top" alt="...">
+                    <!-- <div class="card-body"> -->
+                    <h5 class="card-title">Bus</h5>
+                    <!-- <p class="card-text">From 70000</p>
+                        <a href="#" class="btn btn-primary">See More</a> -->
+                    <!-- </div> -->
+                </div>
+            </div><br>
+        </div><br>
+        <div class="row">
+            <div class="col-md-6" style="padding-left: 17%;">
+                <div class="card" style="width: 22.5rem; ">
+                    <img src="images/taxi.jpg" class="card-img-top" alt="...">
+                    <!-- <div class="card-body"> -->
+                    <h5 class="card-title">Taxi</h5>
+                    <!-- <p class="card-text">From 70000</p>
+                        <a href="#" class="btn btn-primary">See More</a> -->
+                    <!-- </div> -->
+                </div>
+            </div><br>
+            <div class="col-md-6">
+                <div class="card" style="width: 22.5rem;">
+                    <img src="images/cab.jpg" class="card-img-top" alt="...">
+                    <!-- <div class="card-body"> -->
+                    <h5 class="card-title">Cab</h5>
+                    <!-- <p class="card-text">From 70000</p>
+                        <a href="#" class="btn btn-primary">See More</a> -->
+                    <!-- </div> -->
+                </div>
+            </div><br>
+        </div>
+
+    </div><br><br>
+    <div style="text-align: center; font-family: 'Lora', serif; font-size: 300%;">Testimonials</div>
+    <br>
+    <div class="container-fluid" style="background-color: #52524E;">
+        <div id="testimonials" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <img src="images/travel.jpg" class="d-block w-100" alt="..."> -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 style=" font-weight: 800;">Nice Accomodation</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Harry Doe</p>
+                            </div>
+                            <div class="col-6">
+                                <h1 style=" font-weight: 800;">Delicius Food</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Christina Jones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- <img src="images/hotel.jpg" class="d-block w-100" alt="..."> -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 style=" font-weight: 800;">Proffesional rental service</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Christina Jones</p>
+                            </div>
+                            <div class="col-6">
+                                <h1 style=" font-weight: 800;">Good Services</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Christina Jones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- <img src="images/travel.jpg" class="d-block w-100" alt="..."> -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 style=" font-weight: 900;">Elite Services</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Christina Jones</p>
+                            </div>
+                            <div class="col-6">
+                                <h1 style=" font-weight: 800;">Easy Booking</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias molestiae
+                                    distinctio
+                                    eveniet harum quae minus.</p>
+                                <p>- Christina Jones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="color: black;"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="contactus" id="contactus">
+        <div class="container">
+            <div style="text-align: center; ">
+                <div style="text-align: center; font-family: 'Lora', serif; font-size: 300%;">Get In Touch</div>
+            </div>
+            <br>
+            <div class="container" style="width: 60%;" id="contact_form">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="subject">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Comments</label>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+    <div class="container-fluid" id="footer">
+        <div class="row">
+            <div class="col-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur labore sequi dignissimos
+                    facilis ducimus, aliquid ipsum corrupti quia aliquam iusto nobis libero iste est quam voluptatem
+                    hic.
+                </p><br>
+                <p>Copyright © 2021 All Rights Reserved by Olo Travelers</p>
+            </div>
+            <div class="col-3" style="padding-left: 8%;">
+                <p>QUICK LINKS</p>
+                <p>Terms and Conditions</p>
+                <p>Privacy policy</p>
+                <p>Feedback</p>
+            </div>
+            <div class="col-3">
+                <p>CONTACT US</p>
+                <p><i class="fa fa-envelope"></i> &nbsp&nbspolotravel@gmail.com</p>
+                <p><i class="fa fa-map-marker"></i> &nbsp&nbsp&nbspDelhi Airport</p>
+                <p><i class="fa fa-phone"></i>&nbsp +91 7251940275</p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        
+    </script>
+</body>
+
+</html>
